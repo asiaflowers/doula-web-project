@@ -1,122 +1,117 @@
 var data = [
 	{
-		make: "Gibson",
-		model: "Les Paul",
-		type: "Electric",
-		price: "$3,000",
-		image:
-			"http://www.sweetwater.com/images/items/120/LPST5HTHDCH-medium.jpg?9782bd"
+		name: "ali michelle",
+		age: "35",
+		LC: "yes",
+		experience: "10 years",
+		image:"http://www.sweetwater.com/images/items/120/LPST5HTHDCH-medium.jpg?9782bd"
 	},
 	{
-		make: "Gibson",
-		model: "SG",
-		type: "Electric",
-		price: "$1,500",
+		name: "Kalisha King",
+		age: "42",
+		LC: "yes",
+		experience: "27 years",
 		image: "http://www.sweetwater.com/images/items/120/SGSEBCH-medium.jpg?e69cfe"
 	},
 	{
-		make: "Fender",
-		model: "Telecaster",
-		type: "Electric",
-		price: "$2,000",
-		image:
-			"http://www.sweetwater.com/images/items/120/TelePLMPHB-medium.jpg?28e48b"
+		name: "Lynnzie Varise",
+		age: "26",
+		LC: "yes",
+		experience: "7 years total",
+		image:"http://www.sweetwater.com/images/items/120/TelePLMPHB-medium.jpg?28e48b"
 	},
 	{
-		make: "Fender",
-		model: "Stratocaster",
-		type: "Electric",
-		price: "$2,000",
-		image:
-			"http://www.sweetwater.com/images/items/120/StratAMM3SB2-medium.jpg?dfd0a9"
+		name: "Nichelle Craig",
+		age: "32",
+		LC: "yes",
+		EXPERIENCE: "3 years",
+		image:"http://www.sweetwater.com/images/items/120/StratAMM3SB2-medium.jpg?dfd0a9"
 	},
 	{
-		make: "Gretsch",
-		model: "White Falcon",
-		type: "Electric",
-		price: "$5,000",
-		image:
-			"http://www.sweetwater.com/images/items/120/G613655GE-medium.jpg?9bfb0e"
+		name: "yenna mawu",
+		age: "31",
+		LC: "no",
+		experience: "4 years",
+		image:"http://www.sweetwater.com/images/items/120/G613655GE-medium.jpg?9bfb0e"
 	},
 	{
-		make: "Paul Reed Smith",
-		model: "Custom 24",
-		type: "Electric",
-		price: "$5,000",
-		image:
-			"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
+		name: "Tamara Stewart ",
+		age: "44",
+		LC: "yes",
+		experience: "23 years",
+		image:"http://www.sweetwater.com/images/items/120/HBII10BGWB-medium.jpg?982763"
 	},
 	{
-		make: "Gibson",
-		model: "Hummingbird",
-		type: "Acoustic",
-		price: "$2,500",
+		name: "Tykeyah Cannon",
+		age: "27",
+		LC: "yes",
+		experience: "5 years",
 		image: "http://www.sweetwater.com/images/items/120/SSHBHCNP-medium.jpg?11fbea"
 	}
 ];
 
 var products = "",
-	makes = "",
-	models = "",
-	types = "";
+	name = "",
+	age = "",
+	LC = "";
 
 for (var i = 0; i < data.length; i++) {
-	var make = data[i].make,
-		model = data[i].model,
-		type = data[i].type,
-		price = data[i].price,
+	var name = data[i].name,
+		age = data[i].age,
+		LC = data[i].LC,
+		experience = data[i].experience,
 		rawPrice = price.replace("$", ""),
 		rawPrice = parseInt(rawPrice.replace(",", "")),
 		image = data[i].image;
 
 	//create product cards
 	products +=
-		"<div class='col-sm-4 product' data-make='" +
-		make +
-		"' data-model='" +
-		model +
-		"' data-type='" +
-		type +
-		"' data-price='" +
-		rawPrice +
+		"<div class='col-sm-4 product' data-name='" +
+		name +
+		"' data-age='" +
+		age +
+		"' data-LC='" +
+		LC +
+		"' data-experience='" +
+		rawExperience +
 		"'><div class='product-inner text-center'><img src='" +
 		image +
-		"'><br />Make: " +
-		make +
-		"<br />Model: " +
-		model +
-		"<br />Type: " +
-		type +
-		"<br />Price: " +
-		price +
+		"'><br />name: " +
+		name +
+		"<br />age: " +
+		age +
+		"<br />LC: " +
+		LC +
+		"<br />Experience: " +
+		experience +
 		"</div></div>";
 
-	//create dropdown of makes
+	//create dropdown of name
 	if (
-		makes.indexOf("<option value='" + make + "'>" + make + "</option>") == -1
+		names.indexOf("<option value='" + name + "'>" + name + "</option>") == -1
 	) {
-		makes += "<option value='" + make + "'>" + make + "</option>";
+		names += "<option value='" + name + "'>" + name + "</option>";
 	}
 
-	//create dropdown of models
+	//create dropdown of age
 	if (
-		models.indexOf("<option value='" + model + "'>" + model + "</option>") == -1
+		ages.indexOf("<option value='" + age + "'>" + age + "</option>") == -1
 	) {
-		models += "<option value='" + model + "'>" + model + "</option>";
+		ages += "<option value='" + ages + "'>" + age + "</option>";
 	}
 
 	//create dropdown of types
 	if (
-		types.indexOf("<option value='" + type + "'>" + type + "</option>") == -1
+		LCs.indexOf("<option LC='" + LC + "'>" + LC + "</option>") == -1
 	) {
-		types += "<option value='" + type + "'>" + type + "</option>";
+		LCs += "<option value='" + LC + "'>" + LC + "</option>";
 	}
 }
 
 $("#products").html(products);
-$(".filter-make").append(makes);
-$(".filter-model").append(models);
-$(".filter-type").append(types);
+$(".filter-name").append(makes);
+$(".filter-age").append(models);
+$(".filter-LC").append(types);
 
 var filtersObject = {};
 
@@ -154,9 +149,9 @@ $("#search-form").submit(function (e) {
 
 	$(".product").hide();
 	$(".product").each(function () {
-		var make = $(this).data("make").toLowerCase(),
-			model = $(this).data("model").toLowerCase(),
-			type = $(this).data("type").toLowerCase();
+		var name = $(this).data("name").toLowerCase(),
+			age = $(this).data("age").toLowerCase(),
+			LC = $(this).data("LC").toLowerCase();
 
 		if (
 			make.indexOf(query) > -1 ||
